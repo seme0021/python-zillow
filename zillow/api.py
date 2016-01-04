@@ -56,6 +56,38 @@ class ValuationApi(object):
         if retnzestimate:
             parameters['retnzestimate'] = 'true'
 
+        resp = self._RequestUrl(url, 'GET', data=parameters)
+        data = resp.content.decode('utf-8')
+
+        xmltodict_data = xmltodict.parse(data)
+
+        place = Place()
+        place.set_data(xmltodict_data)
+        try:
+            place.set_data(xmltodict_data)
+        except:
+            raise ZillowError({'message': "Zillow did not return a valid response: %s" % data})
+
+        return place
+
+    def GetZEstimate(self, zws_id, zpid, retnzestimate=False):
+        """
+        The GetZestimate API will only surface properties for which a Zestimate exists.
+        If a request is made for a property that has no Zestimate, an error code is returned.
+        Zillow doesn't have Zestimates for all the homes in its database.
+        For such properties, we do have tax assessment data, but that is not provided through the API.
+        For more information, see our Zestimate coverage.
+        :zws_id: The Zillow Web Service Identifier.
+        :param zpid: The address of the property to search. This string should be URL encoded.
+        :param retnzestimate: Return Rent Zestimate information if available (boolean true/false, default: false)
+        :return:
+        """
+        url = '%s/GetZestimate.htm' % (self.base_url)
+        parameters = {'zws-id': zws_id,
+                      'zpid': zpid}
+        if retnzestimate:
+            parameters['retnzestimate'] = 'true'
+
         print parameters
         resp = self._RequestUrl(url, 'GET', data=parameters)
         data = resp.content.decode('utf-8')
@@ -72,7 +104,6 @@ class ValuationApi(object):
             raise ZillowError({'message': "Zillow did not return a valid response: %s" % data})
 
         return place
-        #return User.NewFromJsonDict(data)
 
     def _RequestUrl(self, url, verb, data=None):
         """

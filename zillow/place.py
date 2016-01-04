@@ -1,4 +1,5 @@
 from abc import abstractmethod
+from zillow import ZillowError
 
 class SourceData(classmethod):
 
@@ -132,7 +133,13 @@ class Place(SourceData):
         :param source_data:
         :return:
         """
-        search_results = source_data.get('SearchResults:searchresults', None)['response']['results']['result']
+        if 'Zestimate:zestimate' in source_data:
+            search_results = source_data.get('Zestimate:zestimate', None)['response']
+        elif 'SearchResults:searchresults' in source_data:
+            search_results = source_data.get('SearchResults:searchresults', None)['response']['results']['result']
+        else:
+            raise ZillowError({'message': "Invalid search results" % source_data})
+
         self.zpid = search_results.get('zpid', None)
         self.links.set_data(search_results['links'])
         self.full_address.set_data(search_results['address'])
