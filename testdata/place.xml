@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SearchResults:searchresults
+        xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd http://www.zillowstatic.com/vstatic/fb78708/static/xsd/SearchResults.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:SearchResults="http://www.zillow.com/static/xsd/SearchResults.xsd">
+    <request>
+        <address>3400 Pacific Ave., Marina Del Rey, CA</address>
+        <citystatezip>90292</citystatezip>
+    </request>
+    <message>
+        <text>Request successfully processed</text>
+        <code>0</code>
+    </message>
+    <response>
+        <results>
+            <result>
+                <zpid>2100641621</zpid>
+                <links>
+                    <homedetails>
+                        http://www.zillow.com/homedetails/3400-Pacific-Ave-APT-201-Marina-Del-Rey-CA-90292/2100641621_zpid/
+                    </homedetails>
+                    <mapthishome>http://www.zillow.com/homes/2100641621_zpid/</mapthishome>
+                    <comparables>http://www.zillow.com/homes/comps/2100641621_zpid/</comparables>
+                </links>
+                <address>
+                    <street>3400 Pacific Ave APT 201</street>
+                    <zipcode>90292</zipcode>
+                    <city>Marina Del Rey</city>
+                    <state>CA</state>
+                    <latitude>33.9781</latitude>
+                    <longitude>-118.4643</longitude>
+                </address>
+                <zestimate>
+                    <amount currency="USD">1723665</amount>
+                    <last-updated>01/03/2016</last-updated>
+                    <oneWeekChange deprecated="true"></oneWeekChange>
+                    <valueChange duration="30" currency="USD">108687</valueChange>
+                    <valuationRange>
+                        <low currency="USD">1551299</low>
+                        <high currency="USD">1878795</high>
+                    </valuationRange>
+                    <percentile>0</percentile>
+                </zestimate>
+                <localRealEstate>
+                    <region name="Venice" id="21056" type="neighborhood">
+                        <zindexValue>1,189,300</zindexValue>
+                        <links>
+                            <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Venice/r_21056/</overview>
+                            <forSaleByOwner>http://www.zillow.com/venice-los-angeles-ca/fsbo/</forSaleByOwner>
+                            <forSale>http://www.zillow.com/venice-los-angeles-ca/</forSale>
+                        </links>
+                    </region>
+                </localRealEstate>
+            </result>
+        </results>
+    </response>
+</SearchResults:searchresults><!-- H:002  T:31ms  S:838  R:Mon Jan 04 11:10:41 PST 2016  B:4.0.22974-master.7a1eb7a~hotfix_pre.ef9a469 -->
