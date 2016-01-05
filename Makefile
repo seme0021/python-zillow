@@ -23,7 +23,7 @@ clean:
 	find . -name '*~' -exec rm -f {} \;
 
 coverage:
-	nosetests --with-coverage --cover-package=zillow
+	nosetests --with-coverage --cover-package=zillow --cover-html
 
 test:
 	nosetests
