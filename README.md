@@ -102,3 +102,11 @@ detail_data = api.GetZEstimate(key, zpid)
 zpid="2100641621"
 detail_data = api.GetComps(key, zpid)
 ```
+
+### Get Deep Search Results
+```python
+address = "3400 Pacific Ave., Marina Del Rey, CA"
+postal_code = "90292"
+
+data = api.GetDeepSearchResults(key, address, postal_code)
+```
