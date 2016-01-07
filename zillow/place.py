@@ -87,12 +87,24 @@ class ZEstimateData(SourceData):
         :source_data: Data from data.get('SearchResults:searchresults', None)['response']['results']['result']['zestimate']
         :return:
         """
-        self.amount = int(source_data['amount']['#text'])
+        try:
+            self.amount = int(source_data['amount']['#text'])
+        except:
+            self.amount = None
         self.amount_currency = source_data['amount']['@currency']
         self.amount_last_updated = source_data['last-updated']
-        self.amount_change_30days = int(source_data['valueChange']['#text'])
-        self.valuation_range_low = int(source_data['valuationRange']['low']['#text'])
-        self.valuation_range_high = int(source_data['valuationRange']['high']['#text'])
+        try:
+            self.amount_change_30days = int(source_data['valueChange']['#text'])
+        except:
+            self.amount_change_30days = None
+        try:
+            self.valuation_range_low = int(source_data['valuationRange']['low']['#text'])
+        except:
+            self.valuation_range_low = None
+        try:
+            self.valuation_range_high = int(source_data['valuationRange']['high']['#text'])
+        except:
+            self.valuation_range_high = None
 
 class LocalRealEstate(SourceData):
     def __init__(self, **kwargs):
@@ -126,6 +138,7 @@ class Place(SourceData):
         self.full_address = FullAddress()
         self.zestiamte = ZEstimateData()
         self.local_realestate = LocalRealEstate()
+        self.similarity_score = None
 
     def set_data(self, source_data):
         """
@@ -133,22 +146,18 @@ class Place(SourceData):
         :param source_data:
         :return:
         """
-        if 'Zestimate:zestimate' in source_data:
-            search_results = source_data.get('Zestimate:zestimate', None)['response']
-        elif 'SearchResults:searchresults' in source_data:
-            search_results = source_data.get('SearchResults:searchresults', None)['response']['results']['result']
-        else:
-            raise ZillowError({'message': "Invalid search results" % source_data})
 
-        self.zpid = search_results.get('zpid', None)
-        self.links.set_data(search_results['links'])
-        self.full_address.set_data(search_results['address'])
-        self.zestiamte.set_data(search_results['zestimate'])
-        self.local_realestate.set_data(search_results['localRealEstate'])
+        self.zpid = source_data.get('zpid', None)
+        self.similarity_score = source_data.get('@score', None)
+        self.links.set_data(source_data['links'])
+        self.full_address.set_data(source_data['address'])
+        self.zestiamte.set_data(source_data['zestimate'])
+        self.local_realestate.set_data(source_data['localRealEstate'])
 
     def get_dict(self):
         data = {
             'zpid': self.zpid,
+            'similarity_score': self.similarity_score,
             'links': self.links.get_dict(),
             'full_address': self.full_address.get_dict(),
             'zestimate': self.zestiamte.get_dict(),

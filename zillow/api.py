@@ -62,9 +62,8 @@ class ValuationApi(object):
         xmltodict_data = xmltodict.parse(data)
 
         place = Place()
-        place.set_data(xmltodict_data)
         try:
-            place.set_data(xmltodict_data)
+            place.set_data(xmltodict_data.get('SearchResults:searchresults', None)['response']['results']['result'])
         except:
             raise ZillowError({'message': "Zillow did not return a valid response: %s" % data})
 
@@ -88,22 +87,70 @@ class ValuationApi(object):
         if retnzestimate:
             parameters['retnzestimate'] = 'true'
 
-        print parameters
         resp = self._RequestUrl(url, 'GET', data=parameters)
         data = resp.content.decode('utf-8')
-
-        print data
 
         xmltodict_data = xmltodict.parse(data)
 
         place = Place()
-        place.set_data(xmltodict_data)
         try:
-            place.set_data(xmltodict_data)
+            place.set_data(xmltodict_data.get('Zestimate:zestimate', None)['response'])
         except:
             raise ZillowError({'message': "Zillow did not return a valid response: %s" % data})
 
         return place
+
+
+    def GetComps(self, zws_id, zpid, count=25, retnzestimate=False):
+        """
+        The GetComps API returns a list of comparable recent sales for a specified property.
+        The result set returned contains the address, Zillow property identifier,
+        and Zestimate for the comparable properties and the principal property for which the comparables are being retrieved.
+        :param zpid: The address of the property to search. This string should be URL encoded.
+        :count: The number of comparable recent sales to obtain (integer between 1 and 25)
+        :param retnzestimate: Return Rent Zestimate information if available (boolean true/false, default: false)
+        :return:
+        """
+        url = '%s/GetComps.htm' % (self.base_url)
+        parameters = {'zws-id': zws_id,
+                      'zpid': zpid,
+                      'count': count}
+        if retnzestimate:
+            parameters['retnzestimate'] = 'true'
+
+        resp = self._RequestUrl(url, 'GET', data=parameters)
+        data = resp.content.decode('utf-8')
+
+        # transform the data to an dict-like object
+        xmltodict_data = xmltodict.parse(data)
+
+        # get the principal property data
+        principal_place = Place()
+        principal_data = xmltodict_data.get('Comps:comps')['response']['properties']['principal']
+
+        try:
+            principal_place.set_data(principal_data)
+        except:
+            raise ZillowError({'message': 'No principal data found: %s' % data})
+
+        # get the comps property_data
+        comps = xmltodict_data.get('Comps:comps')['response']['properties']['comparables']['comp']
+
+        comp_places = []
+        for datum in comps:
+            place = Place()
+            try:
+                place.set_data(datum)
+                comp_places.append(place)
+            except:
+                raise ZillowError({'message': 'No valid comp data found %s' % datum})
+
+        output = {
+            'principal': principal_place,
+            'comps': comp_places
+        }
+
+        return output
 
     def _RequestUrl(self, url, verb, data=None):
         """
