@@ -61,3 +61,44 @@ to also run code coverage:
 ```shell
     make coverage
 ```
+
+
+Basic Tutorial on Searching Zillow
+----------------------------------
+
+Here is some basic python code to query the zillow api using the python-zillow library.
+
+Note: I suggest keeping your key stored in a ./bin/config/zillow_key.conf file
+
+### Initialize the API
+
+```python
+import zillow
+
+with open("./bin/config/zillow_key.conf", 'r') as f:
+        key = f.readline().replace("\n", "")
+
+api = zillow.ValuationApi()
+```
+
+### Find a place given an address
+
+```python
+address = "3400 Pacific Ave., Marina Del Rey, CA"
+postal_code = "90292"
+
+data = api.GetSearchResults(key, address, postal_code)
+```
+
+### Find place using a zillow place id
+
+```python
+zpid="2100641621"
+detail_data = api.GetZEstimate(key, zpid)
+```
+
+### Find comparables
+```python
+zpid="2100641621"
+detail_data = api.GetComps(key, zpid)
+```
