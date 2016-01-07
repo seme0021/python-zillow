@@ -100,6 +100,39 @@ class ValuationApi(object):
 
         return place
 
+    def GetDeepSearchResults(self, zws_id, address, citystatezip, retnzestimate=False):
+        """
+        The GetDeepSearchResults API finds a property for a specified address.
+        The result set returned contains the full address(s), zpid and Zestimate data that is provided by the GetSearchResults API.
+        Moreover, this API call also gives rich property data like lot size, year built, bath/beds, last sale details etc.
+        :zws_id: The Zillow Web Service Identifier.
+        :param address: The address of the property to search. This string should be URL encoded.
+        :param citystatezip: The city+state combination and/or ZIP code for which to search.
+        :param retnzestimate: Return Rent Zestimate information if available (boolean true/false, default: false)
+        :return:
+        """
+        url = '%s/GetDeepSearchResults.htm' % (self.base_url)
+        parameters = {'zws-id': zws_id,
+                      'address': address,
+                      'citystatezip': citystatezip
+                      }
+
+        if retnzestimate:
+            parameters['retnzestimate'] = 'true'
+
+        resp = self._RequestUrl(url, 'GET', data=parameters)
+        data = resp.content.decode('utf-8')
+
+        xmltodict_data = xmltodict.parse(data)
+
+        place = Place(has_extended_data=True)
+        try:
+            place.set_data(xmltodict_data.get('SearchResults:searchresults', None)['response']['results']['result'])
+        except:
+            raise ZillowError({'message': "Zillow did not return a valid response: %s" % data})
+
+        return place
+
 
     def GetComps(self, zws_id, zpid, count=25, retnzestimate=False):
         """
@@ -107,7 +140,7 @@ class ValuationApi(object):
         The result set returned contains the address, Zillow property identifier,
         and Zestimate for the comparable properties and the principal property for which the comparables are being retrieved.
         :param zpid: The address of the property to search. This string should be URL encoded.
-        :count: The number of comparable recent sales to obtain (integer between 1 and 25)
+        :param count: The number of comparable recent sales to obtain (integer between 1 and 25)
         :param retnzestimate: Return Rent Zestimate information if available (boolean true/false, default: false)
         :return:
         """

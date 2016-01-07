@@ -1,5 +1,4 @@
 from abc import abstractmethod
-from zillow import ZillowError
 
 class SourceData(classmethod):
 
@@ -107,13 +106,14 @@ class ZEstimateData(SourceData):
             self.valuation_range_high = None
 
 class LocalRealEstate(SourceData):
-    def __init__(self, **kwargs):
+    def __init__(self):
         self.region_name = None
         self.region_id = None
         self.region_type = None
         self.overview_link = None
         self.fsbo_link = None
         self.sale_link = None
+        self.zillow_home_value_index = None
 
     def set_data(self, source_data):
         """
@@ -123,22 +123,56 @@ class LocalRealEstate(SourceData):
         self.region_name = source_data['region']['@name']
         self.region_id = source_data['region']['@id']
         self.region_type =  source_data['region']['@type']
+        self.zillow_home_value_index = source_data.get('zindexValue', None)
         self.overview_link =  source_data['region']['links']['overview']
         self.fsbo_link =  source_data['region']['links']['forSaleByOwner']
         self.sale_link =  source_data['region']['links']['forSale']
+
+class ExtendedData(SourceData):
+    def __init__(self):
+        self.fips_county = None
+        self.usecode = None
+        self.tax_assessment_year = None
+        self.tax_assessment = None
+        self.year_built = None
+        self.lot_size_sqft = None
+        self.finished_sqft = None
+        self.bathrooms = None
+        self.bedrooms = None
+        self.last_sold_date = None
+        self.last_sold_price = None
+        self.complete = False
+
+    def set_data(self, source_data):
+        self.fips_county = source_data.get('FIPScounty', None)
+        self.usecode = source_data['useCode']
+        self.tax_assessment_year = source_data.get('taxAssessmentYear', None)
+        self.tax_assessment = source_data.get('taxAssessment', None)
+        self.year_built = source_data.get('yearBuilt', None)
+        self.lot_size_sqft = source_data.get('lotSizeSqFt', None)
+        self.finished_sqft = source_data.get('finishedSqFt', None)
+        self.bathrooms = source_data.get('bathrooms', None)
+        self.bedrooms = source_data.get('bedrooms', None)
+        self.last_sold_date = source_data.get('lastSoldDate', None)
+        price_element = source_data.get('lastSoldPrice', None)
+        if price_element is not None:
+            self.last_sold_price = price_element.get('#text', None)
+        self.complete = True
 
 
 class Place(SourceData):
     """
     A class representing a property and it's details
     """
-    def __init__(self, **kwargs):
+    def __init__(self, has_extended_data=False):
         self.zpid = None
         self.links = Links()
         self.full_address = FullAddress()
         self.zestiamte = ZEstimateData()
         self.local_realestate = LocalRealEstate()
         self.similarity_score = None
+        self.extended_data = ExtendedData()
+        self.has_extended_data = has_extended_data
 
     def set_data(self, source_data):
         """
@@ -153,6 +187,8 @@ class Place(SourceData):
         self.full_address.set_data(source_data['address'])
         self.zestiamte.set_data(source_data['zestimate'])
         self.local_realestate.set_data(source_data['localRealEstate'])
+        if self.has_extended_data:
+            self.extended_data.set_data(source_data)
 
     def get_dict(self):
         data = {
@@ -161,7 +197,8 @@ class Place(SourceData):
             'links': self.links.get_dict(),
             'full_address': self.full_address.get_dict(),
             'zestimate': self.zestiamte.get_dict(),
-            'local_realestate': self.local_realestate.get_dict()
+            'local_realestate': self.local_realestate.get_dict(),
+            'extended_data': self.extended_data.get_dict()
         }
         return data
 
