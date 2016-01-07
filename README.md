@@ -1,4 +1,4 @@
-Python Zillow
+Python-Zillow
 =============
 
 A Python wrapper around the Zillow API.
