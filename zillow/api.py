@@ -62,9 +62,8 @@ class ValuationApi(object):
         xmltodict_data = xmltodict.parse(data)
 
         place = Place()
-        place.set_data(xmltodict_data)
         try:
-            place.set_data(xmltodict_data)
+            place.set_data(xmltodict_data.get('SearchResults:searchresults', None)['response']['results']['result'])
         except:
             raise ZillowError({'message': "Zillow did not return a valid response: %s" % data})
 
@@ -88,18 +87,14 @@ class ValuationApi(object):
         if retnzestimate:
             parameters['retnzestimate'] = 'true'
 
-        print parameters
         resp = self._RequestUrl(url, 'GET', data=parameters)
         data = resp.content.decode('utf-8')
-
-        print data
 
         xmltodict_data = xmltodict.parse(data)
 
         place = Place()
-        place.set_data(xmltodict_data)
         try:
-            place.set_data(xmltodict_data)
+            place.set_data(xmltodict_data.get('Zestimate:zestimate', None)['response'])
         except:
             raise ZillowError({'message': "Zillow did not return a valid response: %s" % data})
 
@@ -126,18 +121,36 @@ class ValuationApi(object):
         resp = self._RequestUrl(url, 'GET', data=parameters)
         data = resp.content.decode('utf-8')
 
-        print data
-
+        # transform the data to an dict-like object
         xmltodict_data = xmltodict.parse(data)
 
-        place = Place()
-        place.set_data(xmltodict_data)
-        try:
-            place.set_data(xmltodict_data)
-        except:
-            raise ZillowError({'message': "Zillow did not return a valid response: %s" % data})
+        # get the principal property data
+        principal_place = Place()
+        principal_data = xmltodict_data.get('Comps:comps')['response']['properties']['principal']
 
-        return place
+        try:
+            principal_place.set_data(principal_data)
+        except:
+            raise ZillowError({'message': 'No principal data found: %s' % data})
+
+        # get the comps property_data
+        comps = xmltodict_data.get('Comps:comps')['response']['properties']['comparables']['comp']
+
+        comp_places = []
+        for datum in comps:
+            place = Place()
+            try:
+                place.set_data(datum)
+                comp_places.append(place)
+            except:
+                raise ZillowError({'message': 'No valid comp data found %s' % datum})
+
+        output = {
+            'principal': principal_place,
+            'comps': comp_places
+        }
+
+        return output
 
     def _RequestUrl(self, url, verb, data=None):
         """
