@@ -76,7 +76,7 @@ Note: I suggest keeping your key stored in a ./bin/config/zillow_key.conf file
 import zillow
 
 with open("./bin/config/zillow_key.conf", 'r') as f:
-        key = f.readline().replace("\n", "")
+    key = f.readline().replace("\n", "")
 
 api = zillow.ValuationApi()
 ```
