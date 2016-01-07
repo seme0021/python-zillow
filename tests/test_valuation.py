@@ -58,3 +58,13 @@ class TestGetSearchResult(unittest.TestCase):
             comp_places.append(place)
 
         self.assertEqual(10, len(comp_places))
+
+    def test_extended_data(self):
+        RAW_XML = ""
+        with open('./testdata/get_deep_search_results.xml', 'r') as f:
+            RAW_XML = ''.join(f.readlines())
+
+        data = xmltodict.parse(RAW_XML)
+
+        place = Place(has_extended_data=True)
+        place.set_data(data.get('SearchResults:searchresults', None)['response']['results']['result'])
