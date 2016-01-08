@@ -20,7 +20,8 @@ setup(
     author_email='python-zillow@googlegroups.com',
     license='Apache License 2.0',
     url='https://github.com/seme0021/python-zillow',
-    keywords='zillow api',
+    download_url='https://github.com/seme0021/python-zillow/tarball/master',
+    keywords=['zillow', 'api', 'real estate', 'python'],
     description='A Python wrapper around the Zillow API',
     long_description=(read('README.md') + '\n\n' +
                       read('AUTHORS.md') + '\n\n' +
