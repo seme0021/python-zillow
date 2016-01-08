@@ -23,9 +23,6 @@ setup(
     download_url='https://github.com/seme0021/python-zillow/tarball/master',
     keywords=['zillow', 'api', 'real estate', 'python'],
     description='A Python wrapper around the Zillow API',
-    long_description=(read('README.md') + '\n\n' +
-                      read('AUTHORS.md') + '\n\n' +
-                      read('CHANGES')),
     packages=find_packages(exclude=['tests*']),
     install_requires=['future', 'requests', 'requests-oauthlib'],
     classifiers=[
