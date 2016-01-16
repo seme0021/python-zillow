@@ -2,6 +2,7 @@ import unittest
 import xmltodict
 from zillow import Place
 
+
 class TestGetSearchResult(unittest.TestCase):
 
     def test_search_results(self):
@@ -68,3 +69,18 @@ class TestGetSearchResult(unittest.TestCase):
 
         place = Place(has_extended_data=True)
         place.set_data(data.get('SearchResults:searchresults', None)['response']['results']['result'])
+
+        assert place.get_dict() is not None
+
+    def test_get_deep_comps(self):
+        RAW_XML = ""
+        with open('./testdata/get_deep_comps.xml', 'r') as f:
+            RAW_XML = ''.join(f.readlines())
+
+        xmltodict_data = xmltodict.parse(RAW_XML)
+
+        # get the principal property data
+        principal_place = Place()
+        principal_data = xmltodict_data.get('Comps:comps')['response']['properties']['principal']
+
+        assert principal_data is not None

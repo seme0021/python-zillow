@@ -110,6 +110,8 @@ class ValuationApi(object):
         :param citystatezip: The city+state combination and/or ZIP code for which to search.
         :param retnzestimate: Return Rent Zestimate information if available (boolean true/false, default: false)
         :return:
+
+        Example:
         """
         url = '%s/GetDeepSearchResults.htm' % (self.base_url)
         parameters = {'zws-id': zws_id,
@@ -133,8 +135,62 @@ class ValuationApi(object):
 
         return place
 
+    def GetDeepComps(self, zws_id, zpid, count=10, rentzestimate=False):
+        """
+        The GetDeepComps API returns a list of comparable recent sales for a specified property.
+        The result set returned contains the address, Zillow property identifier, and Zestimate for the comparable
+        properties and the principal property for which the comparables are being retrieved.
+        This API call also returns rich property data for the comparables.
+        :param zws_id: The Zillow Web Service Identifier.
+        :param zpid: The address of the property to search. This string should be URL encoded.
+        :param count: The number of comparable recent sales to obtain (integer between 1 and 25)
+        :param rentzestimate: Return Rent Zestimate information if available (boolean true/false, default: false)
+        :return:
+        Example
+            >>> data = api.GetDeepComps("<your key here>", 2100641621, 10)
+        """
+        url = '%s/GetDeepComps.htm' % (self.base_url)
+        parameters = {'zws-id': zws_id,
+                      'zpid': zpid,
+                      'count': count}
+        if rentzestimate:
+            parameters['rentzestimate'] = 'true'
 
-    def GetComps(self, zws_id, zpid, count=25, retnzestimate=False):
+        resp = self._RequestUrl(url, 'GET', data=parameters)
+        data = resp.content.decode('utf-8')
+
+        # transform the data to an dict-like object
+        xmltodict_data = xmltodict.parse(data)
+
+        # get the principal property data
+        principal_place = Place()
+        principal_data = xmltodict_data.get('Comps:comps')['response']['properties']['principal']
+
+        try:
+            principal_place.set_data(principal_data)
+        except:
+            raise ZillowError({'message': 'No principal data found: %s' % data})
+
+        # get the comps property_data
+        comps = xmltodict_data.get('Comps:comps')['response']['properties']['comparables']['comp']
+
+        comp_places = []
+        for datum in comps:
+            place = Place()
+            try:
+                place.set_data(datum)
+                comp_places.append(place)
+            except:
+                raise ZillowError({'message': 'No valid comp data found %s' % datum})
+
+        output = {
+            'principal': principal_place,
+            'comps': comp_places
+        }
+
+        return output
+
+    def GetComps(self, zws_id, zpid, count=25, rentzestimate=False):
         """
         The GetComps API returns a list of comparable recent sales for a specified property.
         The result set returned contains the address, Zillow property identifier,
@@ -148,8 +204,8 @@ class ValuationApi(object):
         parameters = {'zws-id': zws_id,
                       'zpid': zpid,
                       'count': count}
-        if retnzestimate:
-            parameters['retnzestimate'] = 'true'
+        if rentzestimate:
+            parameters['rentzestimate'] = 'true'
 
         resp = self._RequestUrl(url, 'GET', data=parameters)
         data = resp.content.decode('utf-8')
