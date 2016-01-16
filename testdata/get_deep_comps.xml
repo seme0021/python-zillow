@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Comps:comps
+        xsi:schemaLocation="http://www.zillow.com/static/xsd/Comps.xsd http://www.zillowstatic.com/vstatic/6f129fd/static/xsd/Comps.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Comps="http://www.zillow.com/static/xsd/Comps.xsd">
+    <request>
+        <zpid>2100641621</zpid>
+        <count>10</count>
+    </request>
+    <message>
+        <text>Request successfully processed</text>
+        <code>0</code>
+    </message>
+    <response>
+        <properties>
+            <principal>
+                <zpid>2100641621</zpid>
+                <links>
+                    <homedetails>
+                        http://www.zillow.com/homedetails/3400-Pacific-Ave-APT-201-Marina-Del-Rey-CA-90292/2100641621_zpid/
+                    </homedetails>
+                    <mapthishome>http://www.zillow.com/homes/2100641621_zpid/</mapthishome>
+                    <comparables>http://www.zillow.com/homes/comps/2100641621_zpid/</comparables>
+                </links>
+                <address>
+                    <street>3400 Pacific Ave APT 201</street>
+                    <zipcode>90292</zipcode>
+                    <city>Marina Del Rey</city>
+                    <state>CA</state>
+                    <latitude>33.9781</latitude>
+                    <longitude>-118.4643</longitude>
+                </address>
+                <bathrooms>3.0</bathrooms>
+                <bedrooms>2</bedrooms>
+                <zestimate>
+                    <amount currency="USD">1785490</amount>
+                    <last-updated>01/15/2016</last-updated>
+                    <oneWeekChange deprecated="true"></oneWeekChange>
+                    <valueChange duration="30" currency="USD">131345</valueChange>
+                    <valuationRange>
+                        <low currency="USD">1606941</low>
+                        <high currency="USD">1999749</high>
+                    </valuationRange>
+                    <percentile>0</percentile>
+                </zestimate>
+                <localRealEstate>
+                    <region name="Venice" id="21056" type="neighborhood">
+                        <zindexValue>1,189,300</zindexValue>
+                        <links>
+                            <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Venice/r_21056/</overview>
+                            <forSaleByOwner>http://www.zillow.com/venice-los-angeles-ca/fsbo/</forSaleByOwner>
+                            <forSale>http://www.zillow.com/venice-los-angeles-ca/</forSale>
+                        </links>
+                    </region>
+                </localRealEstate>
+            </principal>
+            <comparables>
+                <comp score="19.0">
+                    <zpid>20440534</zpid>
+                    <links>
+                        <homedetails>
+                            http://www.zillow.com/homedetails/4635-Lindblade-Dr-Culver-City-CA-90230/20440534_zpid/
+                        </homedetails>
+                        <graphsanddata>
+                            http://www.zillow.com/homedetails/4635-Lindblade-Dr-Culver-City-CA-90230/20440534_zpid/#charts-and-data
+                        </graphsanddata>
+                        <mapthishome>http://www.zillow.com/homes/20440534_zpid/</mapthishome>
+                        <comparables>http://www.zillow.com/homes/comps/20440534_zpid/</comparables>
+                    </links>
+                    <address>
+                        <street>4635 Lindblade Dr</street>
+                        <zipcode>90230</zipcode>
+                        <city>Culver City</city>
+                        <state>CA</state>
+                        <latitude>33.992424</latitude>
+                        <longitude>-118.417577</longitude>
+                    </address>
+                    <taxAssessmentYear>2014</taxAssessmentYear>
+                    <taxAssessment>1014504.0</taxAssessment>
+                    <yearBuilt>1950</yearBuilt>
+                    <lotSizeSqFt>13094</lotSizeSqFt>
+                    <finishedSqFt>1696</finishedSqFt>
+                    <bathrooms>5.0</bathrooms>
+                    <bedrooms>6</bedrooms>
+                    <totalRooms>11</totalRooms>
+                    <lastSoldDate>06/25/2015</lastSoldDate>
+                    <lastSoldPrice currency="USD">1517000</lastSoldPrice>
+                    <zestimate>
+                        <amount currency="USD">1583328</amount>
+                        <last-updated>01/15/2016</last-updated>
+                        <oneWeekChange deprecated="true"></oneWeekChange>
+                        <valueChange duration="30" currency="USD">56215</valueChange>
+                        <valuationRange>
+                            <low currency="USD">1409162</low>
+                            <high currency="USD">1741661</high>
+                        </valuationRange>
+                        <percentile>99</percentile>
+                    </zestimate>
+                    <localRealEstate>
+                        <region name="Del Rey" id="403184" type="neighborhood">
+                            <zindexValue>714,400</zindexValue>
+                            <links>
+                                <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Del-Rey/r_403184/</overview>
+                                <forSaleByOwner>http://www.zillow.com/del-rey-los-angeles-ca/fsbo/</forSaleByOwner>
+                                <forSale>http://www.zillow.com/del-rey-los-angeles-ca/</forSale>
+                            </links>
+                        </region>
+                    </localRealEstate>
+                </comp>
+                <comp score="16.0">
+                    <zpid>20385517</zpid>
+                    <links>
+                        <homedetails>
+                            http://www.zillow.com/homedetails/8218-Pershing-Dr-Playa-Del-Rey-CA-90293/20385517_zpid/
+                        </homedetails>
+                        <graphsanddata>
+                            http://www.zillow.com/homedetails/8218-Pershing-Dr-Playa-Del-Rey-CA-90293/20385517_zpid/#charts-and-data
+                        </graphsanddata>
+                        <mapthishome>http://www.zillow.com/homes/20385517_zpid/</mapthishome>
+                        <comparables>http://www.zillow.com/homes/comps/20385517_zpid/</comparables>
+                    </links>
+                    <address>
+                        <street>8218 Pershing Dr</street>
+                        <zipcode>90293</zipcode>
+                        <city>Playa Del Rey</city>
+                        <state>CA</state>
+                        <latitude>33.958924</latitude>
+                        <longitude>-118.443805</longitude>
+                    </address>
+                    <taxAssessmentYear>2015</taxAssessmentYear>
+                    <taxAssessment>360098.0</taxAssessment>
+                    <yearBuilt>1958</yearBuilt>
+                    <lotSizeSqFt>5000</lotSizeSqFt>
+                    <finishedSqFt>2223</finishedSqFt>
+                    <bathrooms>3.0</bathrooms>
+                    <bedrooms>5</bedrooms>
+                    <lastSoldDate>12/01/2015</lastSoldDate>
+                    <lastSoldPrice currency="USD">1150000</lastSoldPrice>
+                    <zestimate>
+                        <amount currency="USD">1369608</amount>
+                        <last-updated>01/15/2016</last-updated>
+                        <oneWeekChange deprecated="true"></oneWeekChange>
+                        <valueChange duration="30" currency="USD">-33526</valueChange>
+                        <valuationRange>
+                            <low currency="USD">1301128</low>
+                            <high currency="USD">1479177</high>
+                        </valuationRange>
+                        <percentile>89</percentile>
+                    </zestimate>
+                    <localRealEstate>
+                        <region name="Playa Del Rey" id="276514" type="neighborhood">
+                            <zindexValue>659,600</zindexValue>
+                            <links>
+                                <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Playa-Del-Rey/r_276514/
+                                </overview>
+                                <forSaleByOwner>http://www.zillow.com/playa-del-rey-los-angeles-ca/fsbo/
+                                </forSaleByOwner>
+                                <forSale>http://www.zillow.com/playa-del-rey-los-angeles-ca/</forSale>
+                            </links>
+                        </region>
+                    </localRealEstate>
+                </comp>
+                <comp score="9.0">
+                    <zpid>20386027</zpid>
+                    <links>
+                        <homedetails>
+                            http://www.zillow.com/homedetails/6600-Vista-Del-Mar-Playa-Del-Rey-CA-90293/20386027_zpid/
+                        </homedetails>
+                        <graphsanddata>
+                            http://www.zillow.com/homedetails/6600-Vista-Del-Mar-Playa-Del-Rey-CA-90293/20386027_zpid/#charts-and-data
+                        </graphsanddata>
+                        <mapthishome>http://www.zillow.com/homes/20386027_zpid/</mapthishome>
+                        <comparables>http://www.zillow.com/homes/comps/20386027_zpid/</comparables>
+                    </links>
+                    <address>
+                        <street>6600 Vista Del Mar</street>
+                        <zipcode>90293</zipcode>
+                        <city>Playa Del Rey</city>
+                        <state>CA</state>
+                        <latitude>33.960982</latitude>
+                        <longitude>-118.449937</longitude>
+                    </address>
+                    <taxAssessmentYear>2015</taxAssessmentYear>
+                    <taxAssessment>1200000.0</taxAssessment>
+                    <yearBuilt>1969</yearBuilt>
+                    <lotSizeSqFt>2400</lotSizeSqFt>
+                    <finishedSqFt>2784</finishedSqFt>
+                    <bathrooms>4.0</bathrooms>
+                    <bedrooms>4</bedrooms>
+                    <lastSoldDate>04/21/2015</lastSoldDate>
+                    <lastSoldPrice currency="USD">1650000</lastSoldPrice>
+                    <zestimate>
+                        <amount currency="USD">1765634</amount>
+                        <last-updated>01/15/2016</last-updated>
+                        <oneWeekChange deprecated="true"></oneWeekChange>
+                        <valueChange duration="30" currency="USD">9286</valueChange>
+                        <valuationRange>
+                            <low currency="USD">1642040</low>
+                            <high currency="USD">1906885</high>
+                        </valuationRange>
+                        <percentile>94</percentile>
+                    </zestimate>
+                    <localRealEstate>
+                        <region name="Playa Del Rey" id="276514" type="neighborhood">
+                            <zindexValue>659,600</zindexValue>
+                            <links>
+                                <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Playa-Del-Rey/r_276514/
+                                </overview>
+                                <forSaleByOwner>http://www.zillow.com/playa-del-rey-los-angeles-ca/fsbo/
+                                </forSaleByOwner>
+                                <forSale>http://www.zillow.com/playa-del-rey-los-angeles-ca/</forSale>
+                            </links>
+                        </region>
+                    </localRealEstate>
+                </comp>
+                <comp score="16.0">
+                    <zpid>20386096</zpid>
+                    <links>
+                        <homedetails>
+                            http://www.zillow.com/homedetails/380-Pershing-Dr-Playa-Del-Rey-CA-90293/20386096_zpid/
+                        </homedetails>
+                        <graphsanddata>
+                            http://www.zillow.com/homedetails/380-Pershing-Dr-Playa-Del-Rey-CA-90293/20386096_zpid/#charts-and-data
+                        </graphsanddata>
+                        <mapthishome>http://www.zillow.com/homes/20386096_zpid/</mapthishome>
+                        <comparables>http://www.zillow.com/homes/comps/20386096_zpid/</comparables>
+                    </links>
+                    <address>
+                        <street>380 Pershing Dr</street>
+                        <zipcode>90293</zipcode>
+                        <city>Playa Del Rey</city>
+                        <state>CA</state>
+                        <latitude>33.96002</latitude>
+                        <longitude>-118.44595</longitude>
+                    </address>
+                    <taxAssessmentYear>2014</taxAssessmentYear>
+                    <taxAssessment>875000.0</taxAssessment>
+                    <yearBuilt>1955</yearBuilt>
+                    <lotSizeSqFt>4829</lotSizeSqFt>
+                    <finishedSqFt>1818</finishedSqFt>
+                    <bathrooms>2.0</bathrooms>
+                    <bedrooms>4</bedrooms>
+                    <lastSoldDate>05/29/2015</lastSoldDate>
+                    <lastSoldPrice currency="USD">1125000</lastSoldPrice>
+                    <zestimate>
+                        <amount currency="USD">1063110</amount>
+                        <last-updated>01/15/2016</last-updated>
+                        <oneWeekChange deprecated="true"></oneWeekChange>
+                        <valueChange duration="30" currency="USD">-20243</valueChange>
+                        <valuationRange>
+                            <low currency="USD">978061</low>
+                            <high currency="USD">1148159</high>
+                        </valuationRange>
+                        <percentile>71</percentile>
+                    </zestimate>
+                    <localRealEstate>
+                        <region name="Playa Del Rey" id="276514" type="neighborhood">
+                            <zindexValue>659,600</zindexValue>
+                            <links>
+                                <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Playa-Del-Rey/r_276514/
+                                </overview>
+                                <forSaleByOwner>http://www.zillow.com/playa-del-rey-los-angeles-ca/fsbo/
+                                </forSaleByOwner>
+                                <forSale>http://www.zillow.com/playa-del-rey-los-angeles-ca/</forSale>
+                            </links>
+                        </region>
+                    </localRealEstate>
+                </comp>
+                <comp score="12.0">
+                    <zpid>20386518</zpid>
+                    <links>
+                        <homedetails>
+                            http://www.zillow.com/homedetails/6959-Trolleyway-Playa-Del-Rey-CA-90293/20386518_zpid/
+                        </homedetails>
+                        <graphsanddata>
+                            http://www.zillow.com/homedetails/6959-Trolleyway-Playa-Del-Rey-CA-90293/20386518_zpid/#charts-and-data
+                        </graphsanddata>
+                        <mapthishome>http://www.zillow.com/homes/20386518_zpid/</mapthishome>
+                        <comparables>http://www.zillow.com/homes/comps/20386518_zpid/</comparables>
+                    </links>
+                    <address>
+                        <street>6959 Trolleyway</street>
+                        <zipcode>90293</zipcode>
+                        <city>PLAYA DEL REY</city>
+                        <state>CA</state>
+                        <latitude>33.956705</latitude>
+                        <longitude>-118.449885</longitude>
+                    </address>
+                    <taxAssessmentYear>2014</taxAssessmentYear>
+                    <taxAssessment>277419.0</taxAssessment>
+                    <yearBuilt>1955</yearBuilt>
+                    <lotSizeSqFt>3268</lotSizeSqFt>
+                    <finishedSqFt>3580</finishedSqFt>
+                    <bathrooms>3.0</bathrooms>
+                    <bedrooms>3</bedrooms>
+                    <lastSoldDate>03/18/2015</lastSoldDate>
+                    <lastSoldPrice currency="USD">2400000</lastSoldPrice>
+                    <zestimate>
+                        <amount currency="USD">2333585</amount>
+                        <last-updated>01/15/2016</last-updated>
+                        <oneWeekChange deprecated="true"></oneWeekChange>
+                        <valueChange duration="30" currency="USD">27028</valueChange>
+                        <valuationRange>
+                            <low currency="USD">2193570</low>
+                            <high currency="USD">2450264</high>
+                        </valuationRange>
+                        <percentile>97</percentile>
+                    </zestimate>
+                    <localRealEstate>
+                        <region name="Playa Del Rey" id="276514" type="neighborhood">
+                            <zindexValue>659,600</zindexValue>
+                            <links>
+                                <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Playa-Del-Rey/r_276514/
+                                </overview>
+                                <forSaleByOwner>http://www.zillow.com/playa-del-rey-los-angeles-ca/fsbo/
+                                </forSaleByOwner>
+                                <forSale>http://www.zillow.com/playa-del-rey-los-angeles-ca/</forSale>
+                            </links>
+                        </region>
+                    </localRealEstate>
+                </comp>
+                <comp score="11.0">
+                    <zpid>20488022</zpid>
+                    <links>
+                        <homedetails>
+                            http://www.zillow.com/homedetails/4200-Via-Dolce-APT-329-Marina-Del-Rey-CA-90292/20488022_zpid/
+                        </homedetails>
+                        <graphsanddata>
+                            http://www.zillow.com/homedetails/4200-Via-Dolce-APT-329-Marina-Del-Rey-CA-90292/20488022_zpid/#charts-and-data
+                        </graphsanddata>
+                        <mapthishome>http://www.zillow.com/homes/20488022_zpid/</mapthishome>
+                        <comparables>http://www.zillow.com/homes/comps/20488022_zpid/</comparables>
+                    </links>
+                    <address>
+                        <street>4200 Via Dolce APT 329</street>
+                        <zipcode>90292</zipcode>
+                        <city>Marina Del Rey</city>
+                        <state>CA</state>
+                        <latitude>33.9749</latitude>
+                        <longitude>-118.458885</longitude>
+                    </address>
+                    <taxAssessmentYear>2015</taxAssessmentYear>
+                    <taxAssessment>797822.0</taxAssessment>
+                    <yearBuilt>1974</yearBuilt>
+                    <lotSizeSqFt>191287</lotSizeSqFt>
+                    <finishedSqFt>1880</finishedSqFt>
+                    <bathrooms>3.0</bathrooms>
+                    <bedrooms>3</bedrooms>
+                    <lastSoldDate>11/20/2015</lastSoldDate>
+                    <lastSoldPrice currency="USD">1000000</lastSoldPrice>
+                    <zestimate>
+                        <amount currency="USD">1134361</amount>
+                        <last-updated>01/15/2016</last-updated>
+                        <oneWeekChange deprecated="true"></oneWeekChange>
+                        <valueChange duration="30" currency="USD">8288</valueChange>
+                        <valuationRange>
+                            <low currency="USD">986894</low>
+                            <high currency="USD">1247797</high>
+                        </valuationRange>
+                        <percentile>71</percentile>
+                    </zestimate>
+                    <localRealEstate>
+                        <region name="Venice" id="21056" type="neighborhood">
+                            <zindexValue>1,189,300</zindexValue>
+                            <links>
+                                <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Venice/r_21056/</overview>
+                                <forSaleByOwner>http://www.zillow.com/venice-los-angeles-ca/fsbo/</forSaleByOwner>
+                                <forSale>http://www.zillow.com/venice-los-angeles-ca/</forSale>
+                            </links>
+                        </region>
+                    </localRealEstate>
+                </comp>
+                <comp score="19.0">
+                    <zpid>20386791</zpid>
+                    <links>
+                        <homedetails>http://www.zillow.com/homedetails/442-Manitoba-St-Venice-CA-90293/20386791_zpid/
+                        </homedetails>
+                        <graphsanddata>
+                            http://www.zillow.com/homedetails/442-Manitoba-St-Venice-CA-90293/20386791_zpid/#charts-and-data
+                        </graphsanddata>
+                        <mapthishome>http://www.zillow.com/homes/20386791_zpid/</mapthishome>
+                        <comparables>http://www.zillow.com/homes/comps/20386791_zpid/</comparables>
+                    </links>
+                    <address>
+                        <street>442 Manitoba St</street>
+                        <zipcode>90293</zipcode>
+                        <city>Venice</city>
+                        <state>CA</state>
+                        <latitude>33.95358</latitude>
+                        <longitude>-118.44088</longitude>
+                    </address>
+                    <taxAssessmentYear>2014</taxAssessmentYear>
+                    <taxAssessment>425142.0</taxAssessment>
+                    <yearBuilt>1962</yearBuilt>
+                    <lotSizeSqFt>5003</lotSizeSqFt>
+                    <finishedSqFt>3120</finishedSqFt>
+                    <bathrooms>6.0</bathrooms>
+                    <bedrooms>6</bedrooms>
+                    <lastSoldDate>06/02/2015</lastSoldDate>
+                    <lastSoldPrice currency="USD">1150000</lastSoldPrice>
+                    <zestimate>
+                        <amount currency="USD">1706793</amount>
+                        <last-updated>01/15/2016</last-updated>
+                        <oneWeekChange deprecated="true"></oneWeekChange>
+                        <valueChange duration="30" currency="USD">26301</valueChange>
+                        <valuationRange>
+                            <low currency="USD">1536114</low>
+                            <high currency="USD">1826269</high>
+                        </valuationRange>
+                        <percentile>93</percentile>
+                    </zestimate>
+                    <localRealEstate>
+                        <region name="Playa Del Rey" id="276514" type="neighborhood">
+                            <zindexValue>659,600</zindexValue>
+                            <links>
+                                <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Playa-Del-Rey/r_276514/
+                                </overview>
+                                <forSaleByOwner>http://www.zillow.com/playa-del-rey-los-angeles-ca/fsbo/
+                                </forSaleByOwner>
+                                <forSale>http://www.zillow.com/playa-del-rey-los-angeles-ca/</forSale>
+                            </links>
+                        </region>
+                    </localRealEstate>
+                </comp>
+                <comp score="11.0">
+                    <zpid>20386560</zpid>
+                    <links>
+                        <homedetails>
+                            http://www.zillow.com/homedetails/100-Sunridge-St-Playa-Del-Rey-CA-90293/20386560_zpid/
+                        </homedetails>
+                        <graphsanddata>
+                            http://www.zillow.com/homedetails/100-Sunridge-St-Playa-Del-Rey-CA-90293/20386560_zpid/#charts-and-data
+                        </graphsanddata>
+                        <mapthishome>http://www.zillow.com/homes/20386560_zpid/</mapthishome>
+                        <comparables>http://www.zillow.com/homes/comps/20386560_zpid/</comparables>
+                    </links>
+                    <address>
+                        <street>100 Sunridge St</street>
+                        <zipcode>90293</zipcode>
+                        <city>Playa Del Rey</city>
+                        <state>CA</state>
+                        <latitude>33.955205</latitude>
+                        <longitude>-118.448565</longitude>
+                    </address>
+                    <taxAssessmentYear>2015</taxAssessmentYear>
+                    <taxAssessment>134384.0</taxAssessment>
+                    <yearBuilt>1956</yearBuilt>
+                    <lotSizeSqFt>2552</lotSizeSqFt>
+                    <finishedSqFt>2072</finishedSqFt>
+                    <bathrooms>2.0</bathrooms>
+                    <bedrooms>6</bedrooms>
+                    <lastSoldDate>12/15/2015</lastSoldDate>
+                    <lastSoldPrice currency="USD">1650000</lastSoldPrice>
+                    <zestimate>
+                        <amount currency="USD">1818930</amount>
+                        <last-updated>01/15/2016</last-updated>
+                        <oneWeekChange deprecated="true"></oneWeekChange>
+                        <valueChange duration="30" currency="USD">60079</valueChange>
+                        <valuationRange>
+                            <low currency="USD">1618848</low>
+                            <high currency="USD">2037202</high>
+                        </valuationRange>
+                        <percentile>95</percentile>
+                    </zestimate>
+                    <localRealEstate>
+                        <region name="Playa Del Rey" id="276514" type="neighborhood">
+                            <zindexValue>659,600</zindexValue>
+                            <links>
+                                <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Playa-Del-Rey/r_276514/
+                                </overview>
+                                <forSaleByOwner>http://www.zillow.com/playa-del-rey-los-angeles-ca/fsbo/
+                                </forSaleByOwner>
+                                <forSale>http://www.zillow.com/playa-del-rey-los-angeles-ca/</forSale>
+                            </links>
+                        </region>
+                    </localRealEstate>
+                </comp>
+                <comp score="8.0">
+                    <zpid>20386023</zpid>
+                    <links>
+                        <homedetails>
+                            http://www.zillow.com/homedetails/6665-Vista-Del-Mar-Playa-Del-Rey-CA-90293/20386023_zpid/
+                        </homedetails>
+                        <graphsanddata>
+                            http://www.zillow.com/homedetails/6665-Vista-Del-Mar-Playa-Del-Rey-CA-90293/20386023_zpid/#charts-and-data
+                        </graphsanddata>
+                        <mapthishome>http://www.zillow.com/homes/20386023_zpid/</mapthishome>
+                        <comparables>http://www.zillow.com/homes/comps/20386023_zpid/</comparables>
+                    </links>
+                    <address>
+                        <street>6665 Vista Del Mar</street>
+                        <zipcode>90293</zipcode>
+                        <city>Playa Del Rey</city>
+                        <state>CA</state>
+                        <latitude>33.959986</latitude>
+                        <longitude>-118.448809</longitude>
+                    </address>
+                    <taxAssessmentYear>2014</taxAssessmentYear>
+                    <taxAssessment>1017925.0</taxAssessment>
+                    <yearBuilt>1954</yearBuilt>
+                    <lotSizeSqFt>2701</lotSizeSqFt>
+                    <finishedSqFt>3030</finishedSqFt>
+                    <bathrooms>4.0</bathrooms>
+                    <bedrooms>4</bedrooms>
+                    <totalRooms>8</totalRooms>
+                    <lastSoldDate>07/27/2015</lastSoldDate>
+                    <lastSoldPrice currency="USD">1750000</lastSoldPrice>
+                    <zestimate>
+                        <amount currency="USD">2072781</amount>
+                        <last-updated>01/15/2016</last-updated>
+                        <oneWeekChange deprecated="true"></oneWeekChange>
+                        <valueChange duration="30" currency="USD">57788</valueChange>
+                        <valuationRange>
+                            <low currency="USD">1927686</low>
+                            <high currency="USD">2176420</high>
+                        </valuationRange>
+                        <percentile>96</percentile>
+                    </zestimate>
+                    <localRealEstate>
+                        <region name="Playa Del Rey" id="276514" type="neighborhood">
+                            <zindexValue>659,600</zindexValue>
+                            <links>
+                                <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Playa-Del-Rey/r_276514/
+                                </overview>
+                                <forSaleByOwner>http://www.zillow.com/playa-del-rey-los-angeles-ca/fsbo/
+                                </forSaleByOwner>
+                                <forSale>http://www.zillow.com/playa-del-rey-los-angeles-ca/</forSale>
+                            </links>
+                        </region>
+                    </localRealEstate>
+                </comp>
+                <comp score="11.0">
+                    <zpid>2138006586</zpid>
+                    <links>
+                        <homedetails>
+                            http://www.zillow.com/homedetails/100-Sunridge-St-Playa-Del-Rey-CA-90293/2138006586_zpid/
+                        </homedetails>
+                        <mapthishome>http://www.zillow.com/homes/2138006586_zpid/</mapthishome>
+                        <comparables>http://www.zillow.com/homes/comps/2138006586_zpid/</comparables>
+                    </links>
+                    <address>
+                        <street>100 Sunridge St</street>
+                        <zipcode>90293</zipcode>
+                        <city>Playa Del Rey</city>
+                        <state>CA</state>
+                        <latitude>33.955202</latitude>
+                        <longitude>-118.448554</longitude>
+                    </address>
+                    <yearBuilt>1956</yearBuilt>
+                    <lotSizeSqFt>111949200</lotSizeSqFt>
+                    <finishedSqFt>1872</finishedSqFt>
+                    <bathrooms>2.0</bathrooms>
+                    <bedrooms>6</bedrooms>
+                    <lastSoldDate>12/15/2015</lastSoldDate>
+                    <lastSoldPrice currency="USD">1650000</lastSoldPrice>
+                    <zestimate>
+                        <amount currency="USD">1963142</amount>
+                        <last-updated>01/15/2016</last-updated>
+                        <oneWeekChange deprecated="true"></oneWeekChange>
+                        <valueChange duration="30" currency="USD">89534</valueChange>
+                        <valuationRange>
+                            <low currency="USD">1707934</low>
+                            <high currency="USD">2139825</high>
+                        </valuationRange>
+                        <percentile>0</percentile>
+                    </zestimate>
+                    <localRealEstate>
+                        <region name="Playa Del Rey" id="276514" type="neighborhood">
+                            <zindexValue>659,600</zindexValue>
+                            <links>
+                                <overview>http://www.zillow.com/local-info/CA-Los-Angeles/Playa-Del-Rey/r_276514/
+                                </overview>
+                                <forSaleByOwner>http://www.zillow.com/playa-del-rey-los-angeles-ca/fsbo/
+                                </forSaleByOwner>
+                                <forSale>http://www.zillow.com/playa-del-rey-los-angeles-ca/</forSale>
+                            </links>
+                        </region>
+                    </localRealEstate>
+                </comp>
+            </comparables>
+        </properties>
+    </response>
+</Comps:comps><!-- H:003  T:23ms  S:10150  R:Sat Jan 16 13:02:13 PST 2016  B:4.0.23655-master.2114381~hotfix_pre.f736602 -->

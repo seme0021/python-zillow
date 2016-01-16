@@ -110,3 +110,12 @@ postal_code = "90292"
 
 data = api.GetDeepSearchResults(key, address, postal_code)
 ```
+
+### Get Deep Comps
+```python
+zws_id = "<your key>"
+zpid = 2100641621
+count=10
+
+data = data = api.GetDeepComps(zws_id, zpid, count)
+```
