@@ -168,7 +168,7 @@ class Place(SourceData):
         self.zpid = None
         self.links = Links()
         self.full_address = FullAddress()
-        self.zestiamte = ZEstimateData()
+        self.zestimate = ZEstimateData()
         self.local_realestate = LocalRealEstate()
         self.similarity_score = None
         self.extended_data = ExtendedData()
@@ -196,7 +196,7 @@ class Place(SourceData):
             'similarity_score': self.similarity_score,
             'links': self.links.get_dict(),
             'full_address': self.full_address.get_dict(),
-            'zestimate': self.zestiamte.get_dict(),
+            'zestimate': self.zestimate.get_dict(),
             'local_realestate': self.local_realestate.get_dict(),
             'extended_data': self.extended_data.get_dict()
         }
