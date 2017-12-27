@@ -1,4 +1,6 @@
 from abc import abstractmethod
+import warnings
+
 
 class SourceData(classmethod):
 
@@ -174,6 +176,17 @@ class Place(SourceData):
         self.extended_data = ExtendedData()
         self.has_extended_data = has_extended_data
 
+    @property
+    def zestiamte(self):
+        """Backward-compatible typo property to prevent breaking changes."""
+        warnings.warn(
+            'The ``zestiamte`` attribute has been renamed to '
+            '``zestimate`` and will be removed in a future release.',
+            DeprecationWarning,
+        )
+        return self.zestimate
+
+
     def set_data(self, source_data):
         """
         :source_data": Data from data.get('SearchResults:searchresults', None)['response']['results']['result']
@@ -185,7 +198,7 @@ class Place(SourceData):
         self.similarity_score = source_data.get('@score', None)
         self.links.set_data(source_data['links'])
         self.full_address.set_data(source_data['address'])
-        self.zestiamte.set_data(source_data['zestimate'])
+        self.zestimate.set_data(source_data['zestimate'])
         self.local_realestate.set_data(source_data['localRealEstate'])
         if self.has_extended_data:
             self.extended_data.set_data(source_data)
@@ -201,7 +214,3 @@ class Place(SourceData):
             'extended_data': self.extended_data.get_dict()
         }
         return data
-
-
-
-
