@@ -1,4 +1,6 @@
 import unittest
+import warnings
+
 import xmltodict
 from zillow import Place
 
@@ -16,7 +18,7 @@ class TestGetSearchResult(unittest.TestCase):
         place.set_data(data.get('SearchResults:searchresults', None)['response']['results']['result'])
 
         self.assertEqual("2100641621", place.zpid)
-        self.assertEqual(1723665, place.zestiamte.amount)
+        self.assertEqual(1723665, place.zestimate.amount)
 
     def test_zestimate(self):
         RAW_XML = ""
@@ -29,7 +31,31 @@ class TestGetSearchResult(unittest.TestCase):
         place.set_data(data.get('Zestimate:zestimate', None)['response'])
 
         self.assertEqual("2100641621", place.zpid)
-        self.assertEqual(1723665, place.zestiamte.amount)
+        self.assertEqual(1723665, place.zestimate.amount)
+
+    def test_zestiamte(self):
+        """Test that the backward-compatible ``zestiamte`` works.
+
+        This property should correctly return the ``zestimate``
+        attribute and raise a DeprecationWarning about the changing
+        name.
+
+        """
+        warnings.simplefilter('always', DeprecationWarning)
+
+        with open('./testdata/get_zestimate.xml', 'r') as f:
+            RAW_XML = ''.join(f.readlines())
+
+        data = xmltodict.parse(RAW_XML)
+
+        place = Place()
+        place.set_data(data.get('Zestimate:zestimate', None)['response'])
+
+        self.assertEqual(place.zestiamte, place.zestimate)
+
+        with warnings.catch_warnings(record=True) as warning:
+            place.zestiamte
+            assert issubclass(warning[0].category, DeprecationWarning)
 
     def test_getcomps_principal(self):
         RAW_XML = ""
