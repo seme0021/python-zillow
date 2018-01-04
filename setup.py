@@ -24,7 +24,10 @@ setup(
     keywords=['zillow', 'api', 'real estate', 'python'],
     description='A Python wrapper around the Zillow API',
     packages=find_packages(exclude=['tests*']),
-    install_requires=['future', 'requests', 'requests-oauthlib'],
+    install_requires=[
+        'requests',
+        'xmltodict',
+    ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
