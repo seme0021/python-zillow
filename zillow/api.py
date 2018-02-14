@@ -28,7 +28,7 @@ class ValuationApi(object):
         >>> data = api.GetSearchResults("<your key here>", "<your address here>", "<your zip here>")
     """
     def __init__(self):
-        self.base_url = "http://www.zillow.com/webservice"
+        self.base_url = "https://www.zillow.com/webservice"
         self._input_encoding = None
         self._request_headers=None
         self.__auth = None
