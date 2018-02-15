@@ -3,7 +3,7 @@ Python-Zillow
 
 A Python wrapper around the Zillow API.
 
-By the [Python-Zillow Developers](<python-zillow@googlegroups.com>)
+By the [Python-Zillow Developers](mailto:python-zillow@googlegroups.com)
 
 
 Introduction
@@ -11,7 +11,7 @@ Introduction
 
 This library provides a Python interface for the [Zillow API](http://www.zillow.com/howto/api/APIOverview.htm). It works with Python versions from 2.6+.
 
-[Zillow](www.zillow.com) provides a service that allows people to research the value of home across the United States. 
+[Zillow](www.zillow.com) provides a service that allows people to research the value of home across the United States.
 Zillow exposes this information via a web services API and this library is intended to make it easier for Python developers to use.
 
 
