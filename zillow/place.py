@@ -14,7 +14,7 @@ class SourceData(classmethod):
     @abstractmethod
     def debug(self):
         for i in self.__dict__.keys():
-            print ("%s: %s" % (i, self.__dict__[i]))
+            print("%s: %s" % (i, self.__dict__[i]))
 
     @abstractmethod
     def get_dict(self):

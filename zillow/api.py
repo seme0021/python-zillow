@@ -1,17 +1,15 @@
-from zillow import (__author__, ZillowError, Place)
+import requests
 import xmltodict
 
-import requests
 try:
-  # python 3
-  from urllib.parse import urlparse, urlunparse, urlencode
-  from urllib.request import urlopen
-  from urllib.request import __version__ as urllib_version
+    # python 3
+    from urllib.parse import urlparse, urlunparse, urlencode
 except ImportError:
-  from urlparse import urlparse, urlunparse
-  from urllib2 import urlopen
-  from urllib import urlencode
-  from urllib import __version__ as urllib_version
+    from urlparse import urlparse, urlunparse
+    from urllib import urlencode
+
+from .error import ZillowError
+from .place import Place
 
 
 class ValuationApi(object):

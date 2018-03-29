@@ -1,7 +1,5 @@
-#!/usr/bin/env python
-
 class ZillowError(Exception):
-    """Base class for Twitter errors"""
+    """Base class for Zillow errors"""
 
     @property
     def message(self):

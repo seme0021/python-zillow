@@ -1,0 +1,6 @@
+include LICENSE *.md *.rst
+
+# Tests
+include tox.ini .coveragerc conftest.py *-requirements.txt
+recursive-include tests *.py
+exclude .travis.yml
