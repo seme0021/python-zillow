@@ -1,7 +1,7 @@
 0.2.0
 =====
 
-Released: TBA
+Released: 2018-03-29
 
 - Add ``GetDeepComps`` API method
 - Fix Python 3 compatibility
