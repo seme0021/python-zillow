@@ -15,7 +15,7 @@ def read(*paths):
 
 setup(
     name='python-zillow',
-    version='0.2.0',
+    version='0.3.0',
     author='The Python-Zillow Developers',
     author_email='python-zillow@googlegroups.com',
     license='Apache License 2.0',
